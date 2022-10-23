@@ -1,15 +1,18 @@
+
 import java.util.*;
 public class comput {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num[] = new int[5];
-        int positiveCount = 0;
-        int negativeCount = 0;
+        int posCount = 0;
+
+        int negCount = 0;
+
         int sumPositive = 0;
         int sumNegative = 0;
         int sum;
-        float averagePositive = 0.0f;
+        float avePositive = 0.0f;
         float averageNegative = 0.0f;
         float avg = 0.0f;
 
@@ -21,62 +24,66 @@ public class comput {
             if(num[i] > 0)
             {
                 sumPositive += num[i];
-                positiveCount++;
+                posCount++;
             }
             else
             {
                 sumNegative += num[i];
-                negativeCount++;
+                negCount++;
             }
         }
+
         sum = sumPositive + sumNegative;
 
-        if(positiveCount == 0)
+        if(posCount == 0)
         {
-            averagePositive = 0.0f;
+            avePositive = 0.0f;
         }
         else
         {
-            averagePositive = (float) (sumPositive)/positiveCount;
+            avePositive = (float) (sumPositive)/posCount;
         }
 
-        averageNegative = (float) (sumNegative)/negativeCount;
+
+        averageNegative = (float) (sumNegative)/negCount;
 
         avg = (float) (sum)/5;
 
-        if(positiveCount == 1)
+        if(posCount == 1)
         {
-            System.out.printf("The sum of the %d positive number : %d",positiveCount, sumPositive);
+            System.out.printf("The sum of the %d positive number : %d",posCount, sumPositive);
         }
         else
         {
-            System.out.printf("The sum of the %d positive numbers: %d",positiveCount, sumPositive);
+            System.out.printf("The sum of the %d positive numbers: %d",posCount, sumPositive);
         }
-        if(negativeCount == 1)
+        if(negCount == 1)
         {
-            System.out.printf("\nThe sum of the %d non-positive number: %d", negativeCount, sumNegative);
+
+            System.out.printf("\nThe sum of the %d non-positive number: %d", negCount, sumNegative);
         }
         else
         {
-            System.out.printf("\nThe sum of the %d non-positive numbers: %d",negativeCount, sumNegative);
+
+            System.out.printf("\nThe sum of the %d non-positive numbers: %d",negCount, sumNegative);
         }
 
         System.out.printf("\nThe sum of the 5 numbers: %d", sum);
-        if(positiveCount == 1)
+        if(posCount == 1)
         {
-            System.out.printf("\nThe average of the %d positive number: %.2f", positiveCount,averagePositive);
+            System.out.printf("\nThe average of the %d positive number: %.2f", posCount,avePositive);
         }
         else
         {
-            System.out.printf("\nThe average of the %d positive numbers: %.2f", positiveCount,averagePositive);
+            System.out.printf("\nThe average of the %d positive numbers: %.2f", posCount,avePositive);
         }
-        if(negativeCount == 1)
+        if(negCount == 1)
         {
-            System.out.printf("\nThe average of the %d non-positive number: %.2f", negativeCount, averageNegative);
+            System.out.printf("\nThe average of the %d non-positive number: %.2f", negCount, averageNegative);
         }
         else
         {
-            System.out.printf("\nThe sum of the %d non-positive numbers: %.2f", negativeCount,averageNegative);
+            System.out.printf("\nThe sum of the %d non-positive numbers: %.2f", negCount,averageNegative);
         }
 
         System.out.printf("\nThe average of the 5 numbers: %.2f", avg);
